@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(102, 220, 179);
+}
+form{
+    max-width: 400px;
+    margin: 20px auto;
+}
+fieldset {
+    padding: 10px;
+    border-color: rgb(167, 224, 224);
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type=text],
+input[type=email],
+input[type=number] {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+input[type=submit] {
+    margin-bottom: 10px;
+}
+form ul{
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+.box {
+    width: 400px;
+    padding: 10px;
+    margin: 0 auto;
+    border: 1px solid lightcoral;
+}
+.error {
+    color: red;
+    font-style: italic;
+}
+select {
+    display: block;
+    margin-bottom: 10px;
+}
+.video {
+    text-align: center;
+    background: #ddd;
+    padding: 20px;
+}
+.video p {
+    font-size: 25px;
+}
+.notHappy {
+    background: #000;
+}
+.notHappy p {
+    color: yellow;
+}
+iframe {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
