@@ -12,13 +12,13 @@
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         <fieldset>
             <label for="">NAME</label>
-            <input type="text" name="name" value=" <?php if(isset($_POST['name'])) echo htmlspecialchars($_POST['name']); ?>">
+            <input type="text" name="name" value="<?php if(isset($_POST['name'])) echo htmlspecialchars($_POST['name']); ?>">
             <label for="">Total miles driving?</label>
-            <input type="number" name="miles" value=" <?php if(isset($_POST['miles'])) echo htmlspecialchars($_POST['miles']); ?>">
+            <input type="number" name="miles" value="<?php if(isset($_POST['miles'])) echo htmlspecialchars($_POST['miles']); ?>">
             <label for="">How fast do you typically drive?</label>
-            <input type="number" name="speed" value=" <?php if(isset($_POST['speed'])) echo htmlspecialchars($_POST['speed']); ?>">
+            <input type="number" name="speed" value="<?php if(isset($_POST['speed'])) echo htmlspecialchars($_POST['speed']); ?>">
             <label for="">How many hours per day do you plan on driving?</label>
-            <input type="number" name="hours" value=" <?php if(isset($_POST['hours'])) echo htmlspecialchars($_POST['hours']); ?>">
+            <input type="number" name="hours" value="<?php if(isset($_POST['hours'])) echo htmlspecialchars($_POST['hours']); ?>">
 
             <label for="">Price of gas</label>
             <ul>
@@ -72,15 +72,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if(isset($_POST['name'], $_POST['miles'], $_POST['speed'], $_POST['hours'], $_POST['price'], $_POST['fuel'])) {
         $name = $_POST['name'];
-        $miles = $_POST['miles'];
+        $miles = floatval($_POST['miles']);
         $speed = floatval($_POST['speed']);
         $hours = floatval($_POST['hours']);
         $price = $_POST['price'];
-        $fuel = $_POST['fuel'];
-        $totalHours = $miles / $speed;
-        $days = $totalHours / $hours;
-        $gas = $miles / $fuel;
-        $dollars = $price * $gas;
+        $fuel = floatval($_POST['fuel']);
+        if($speed != 0 && $hours != 0 && $fuel != 0) {
+            $totalHours = $miles / $speed;
+            $days = $totalHours / $hours;
+            $gas = $miles / $fuel;
+            $dollars = $price * $gas;
+        }
 
         if(!empty($name && $miles && $speed && $hours && $price && $fuel)) {
 
