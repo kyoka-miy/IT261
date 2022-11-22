@@ -230,3 +230,9 @@ function random_images($photos) {
     $my_return = '<img src = "img/'.$selected_image.'" alt="'.$photos[$i].'" >';
     return $my_return;
 }
+
+$farms['Fuji_Ringo'] = 'ringo_fuji Tanaka tanaka';
+$farms['Beni_Shoga'] = 'shoga_beni Koyama koyama';
+$farms['Yama_Budou'] = 'budou_yama Meguro meguro';
+$farms['Shoku_Pan'] = 'shoku_pan Suzuki suzuki';
+$farms['Oni_Goroshi'] = 'goros_oni Tarobe tarobe';
